@@ -1,28 +1,31 @@
-import 'package:flutter/material.dart';
-import 'package:carsaleauction/app/app.bottomsheets.dart';
-import 'package:carsaleauction/app/app.dialogs.dart';
 import 'package:carsaleauction/app/app.locator.dart';
 import 'package:carsaleauction/app/app.router.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:stacked_services/stacked_services.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
+
   await setupLocator();
-  setupDialogUi();
-  setupBottomSheetUi();
-  runApp(const MainApp());
+  await SystemChrome.setPreferredOrientations(
+    [DeviceOrientation.portraitUp],
+  );
+  runApp(const MyApp());
 }
 
-class MainApp extends StatelessWidget {
-  const MainApp({super.key});
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      initialRoute: Routes.startupView,
+      debugShowCheckedModeBanner: false,
       onGenerateRoute: StackedRouter().onGenerateRoute,
       navigatorKey: StackedService.navigatorKey,
-      navigatorObservers: [StackedService.routeObserver],
+      navigatorObservers: [
+        StackedService.routeObserver,
+      ],
     );
   }
 }
