@@ -135,7 +135,8 @@ class OtpVerificationView extends StackedView<OtpVerificationViewModel> {
           ],
         ),
       ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+      floatingActionButtonLocation:
+          FloatingActionButtonLocation.miniCenterFloat,
       floatingActionButton: GestureDetector(
         onTap: () => viewModel.navigateToNatinoalidVerificationViewView(),
         child: Container(
