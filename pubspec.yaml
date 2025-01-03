@@ -1,16 +1,20 @@
 name: carsaleauction
 description: A new Flutter project.
-publish_to: 'none'
+publish_to: "none"
 version: 0.1.0
 
 environment:
-  sdk: '>=3.0.3 <4.0.0'
+  sdk: ">=3.0.3 <4.0.0"
 
 dependencies:
   flutter:
     sdk: flutter
   stacked: ^3.4.0
   stacked_services: ^1.1.0
+  google_fonts: ^6.2.1
+  auto_size_text: ^3.0.0
+  flutter_svg: ^2.0.16
+  intl_phone_number_input: ^0.7.4
 
 dev_dependencies:
   build_runner: ^2.4.5
@@ -23,3 +27,6 @@ dev_dependencies:
 flutter:
   uses-material-design: true
 
+  assets:
+    - assets/images/welcome/
+    - assets/images/login/

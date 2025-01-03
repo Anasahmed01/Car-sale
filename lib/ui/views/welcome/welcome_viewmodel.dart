@@ -1,5 +1,5 @@
 import 'package:carsaleauction/app/app.locator.dart';
-import 'package:carsaleauction/ui/views/auth/login.dart';
+import 'package:carsaleauction/ui/views/auth/login/login.dart';
 import 'package:stacked/stacked.dart';
 import 'package:stacked_services/stacked_services.dart';
 

@@ -1,4 +1,5 @@
 import 'package:carsaleauction/src/resubale_widget/custom_text.dart';
+import 'package:carsaleauction/src/utils/colors/colors.dart';
 import 'package:flutter/material.dart';
 
 Widget auctionInfoRadio(
@@ -25,7 +26,7 @@ Widget auctionInfoRadio(
       fillColor: WidgetStateProperty.all(Colors.white),
       autofocus: false,
       activeColor: Colors.white,
-      checkColor: Colors.green,
+      checkColor: AppColors.greenColor,
       checkboxScaleFactor: 1.5,
       selected: value,
       dense: true,

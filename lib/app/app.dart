@@ -1,16 +1,18 @@
 import 'package:carsaleauction/ui/bottom_sheets/notice/notice_sheet.dart';
 import 'package:carsaleauction/ui/dialogs/info_alert/info_alert_dialog.dart';
-import 'package:carsaleauction/ui/views/home/home_view.dart';
-import 'package:carsaleauction/ui/views/startup/startup_view.dart';
+import 'package:carsaleauction/ui/views/auth/login/login.dart';
+import 'package:carsaleauction/ui/views/welcome/welcome.dart';
 import 'package:stacked/stacked_annotations.dart';
 import 'package:stacked_services/stacked_services.dart';
+import 'package:carsaleauction/ui/views/auth/otp_verification/otp_verification_view.dart';
 // @stacked-import
 
 @StackedApp(
   routes: [
-    MaterialRoute(page: HomeView),
-    MaterialRoute(page: StartupView),
-    // @stacked-route
+    MaterialRoute(page: WelcomeView, initial: true),
+    MaterialRoute(page: LoginView),
+    MaterialRoute(page: OtpVerificationView),
+// @stacked-route
   ],
   dependencies: [
     LazySingleton(classType: BottomSheetService),
