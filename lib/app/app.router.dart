@@ -8,11 +8,13 @@
 import 'package:carsaleauction/ui/views/auth/login/login.dart' as _i3;
 import 'package:carsaleauction/ui/views/auth/otp_verification/otp_verification_view.dart'
     as _i4;
+import 'package:carsaleauction/ui/views/natinoalid_verification/natinoalid_verification.dart'
+    as _i5;
 import 'package:carsaleauction/ui/views/welcome/welcome.dart' as _i2;
-import 'package:flutter/material.dart' as _i5;
+import 'package:flutter/material.dart' as _i6;
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart' as _i1;
-import 'package:stacked_services/stacked_services.dart' as _i6;
+import 'package:stacked_services/stacked_services.dart' as _i7;
 
 class Routes {
   static const welcomeView = '/';
@@ -21,10 +23,13 @@ class Routes {
 
   static const otpVerificationView = '/otp-verification-view';
 
+  static const natinoalidVerificationView = '/natinoalid-verification-view';
+
   static const all = <String>{
     welcomeView,
     loginView,
     otpVerificationView,
+    natinoalidVerificationView,
   };
 }
 
@@ -42,24 +47,34 @@ class StackedRouter extends _i1.RouterBase {
       Routes.otpVerificationView,
       page: _i4.OtpVerificationView,
     ),
+    _i1.RouteDef(
+      Routes.natinoalidVerificationView,
+      page: _i5.NatinoalidVerificationView,
+    ),
   ];
 
   final _pagesMap = <Type, _i1.StackedRouteFactory>{
     _i2.WelcomeView: (data) {
-      return _i5.MaterialPageRoute<dynamic>(
+      return _i6.MaterialPageRoute<dynamic>(
         builder: (context) => const _i2.WelcomeView(),
         settings: data,
       );
     },
     _i3.LoginView: (data) {
-      return _i5.MaterialPageRoute<dynamic>(
+      return _i6.MaterialPageRoute<dynamic>(
         builder: (context) => const _i3.LoginView(),
         settings: data,
       );
     },
     _i4.OtpVerificationView: (data) {
-      return _i5.MaterialPageRoute<dynamic>(
+      return _i6.MaterialPageRoute<dynamic>(
         builder: (context) => const _i4.OtpVerificationView(),
+        settings: data,
+      );
+    },
+    _i5.NatinoalidVerificationView: (data) {
+      return _i6.MaterialPageRoute<dynamic>(
+        builder: (context) => const _i5.NatinoalidVerificationView(),
         settings: data,
       );
     },
@@ -72,7 +87,7 @@ class StackedRouter extends _i1.RouterBase {
   Map<Type, _i1.StackedRouteFactory> get pagesMap => _pagesMap;
 }
 
-extension NavigatorStateExtension on _i6.NavigationService {
+extension NavigatorStateExtension on _i7.NavigationService {
   Future<dynamic> navigateToWelcomeView([
     int? routerId,
     bool preventDuplicates = true,
@@ -115,6 +130,20 @@ extension NavigatorStateExtension on _i6.NavigationService {
         transition: transition);
   }
 
+  Future<dynamic> navigateToNatinoalidVerificationView([
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  ]) async {
+    return navigateTo<dynamic>(Routes.natinoalidVerificationView,
+        id: routerId,
+        preventDuplicates: preventDuplicates,
+        parameters: parameters,
+        transition: transition);
+  }
+
   Future<dynamic> replaceWithWelcomeView([
     int? routerId,
     bool preventDuplicates = true,
@@ -151,6 +180,20 @@ extension NavigatorStateExtension on _i6.NavigationService {
         transition,
   ]) async {
     return replaceWith<dynamic>(Routes.otpVerificationView,
+        id: routerId,
+        preventDuplicates: preventDuplicates,
+        parameters: parameters,
+        transition: transition);
+  }
+
+  Future<dynamic> replaceWithNatinoalidVerificationView([
+    int? routerId,
+    bool preventDuplicates = true,
+    Map<String, String>? parameters,
+    Widget Function(BuildContext, Animation<double>, Animation<double>, Widget)?
+        transition,
+  ]) async {
+    return replaceWith<dynamic>(Routes.natinoalidVerificationView,
         id: routerId,
         preventDuplicates: preventDuplicates,
         parameters: parameters,

@@ -1,6 +1,8 @@
 import 'package:carsaleauction/src/resubale_widget/custom_text.dart';
 import 'package:carsaleauction/src/utils/colors/colors.dart';
 import 'package:carsaleauction/ui/views/auth/login/login_viewmodel.dart';
+import 'package:carsaleauction/ui/views/auth/otp_verification/otp_verification_view.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:intl_phone_number_input/intl_phone_number_input.dart';
 import 'package:stacked/stacked.dart';
@@ -107,18 +109,23 @@ class LoginView extends StackedView<LoginViewModel> {
               ),
               GestureDetector(
                 onTap: () {
-                  viewModel.navigateToOtpView();
-                  viewModel.rebuildUi();
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const OtpVerificationView(),
+                    ),
+                  );
                 },
                 child: Container(
                   decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(15),
+                    borderRadius: BorderRadius.circular(10),
                     color: AppColors.greenColor,
                   ),
                   padding:
                       const EdgeInsets.symmetric(horizontal: 50, vertical: 15),
                   alignment: Alignment.center,
                   child: CustomText.customSizedText(
+                      color: AppColors.white,
                       size: 13,
                       text: 'CREATE ACCOUNT',
                       fontWeight: FontWeight.w600),
@@ -127,16 +134,20 @@ class LoginView extends StackedView<LoginViewModel> {
               const SizedBox(
                 height: 50,
               ),
-              const Center(
+              Center(
                 child: Text.rich(
                   TextSpan(
                     children: [
-                      TextSpan(
+                      const TextSpan(
                           text: 'You have an account? ',
                           style: TextStyle(fontWeight: FontWeight.w500)),
                       TextSpan(
+                        recognizer: TapGestureRecognizer()
+                          ..onTap = () {
+                            // viewModel.navigateToOtpView();
+                          },
                         text: 'Sign in',
-                        style: TextStyle(
+                        style: const TextStyle(
                             fontWeight: FontWeight.w700,
                             fontSize: 16,
                             color: Colors.blue),

@@ -1,10 +1,11 @@
 import 'package:carsaleauction/ui/bottom_sheets/notice/notice_sheet.dart';
 import 'package:carsaleauction/ui/dialogs/info_alert/info_alert_dialog.dart';
 import 'package:carsaleauction/ui/views/auth/login/login.dart';
+import 'package:carsaleauction/ui/views/auth/otp_verification/otp_verification_view.dart';
+import 'package:carsaleauction/ui/views/natinoalid_verification/natinoalid_verification.dart';
 import 'package:carsaleauction/ui/views/welcome/welcome.dart';
 import 'package:stacked/stacked_annotations.dart';
 import 'package:stacked_services/stacked_services.dart';
-import 'package:carsaleauction/ui/views/auth/otp_verification/otp_verification_view.dart';
 // @stacked-import
 
 @StackedApp(
@@ -12,6 +13,7 @@ import 'package:carsaleauction/ui/views/auth/otp_verification/otp_verification_v
     MaterialRoute(page: WelcomeView, initial: true),
     MaterialRoute(page: LoginView),
     MaterialRoute(page: OtpVerificationView),
+    MaterialRoute(page: NatinoalidVerificationView),
 // @stacked-route
   ],
   dependencies: [
