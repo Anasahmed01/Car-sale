@@ -1,4 +1,7 @@
+import 'package:carsaleauction/src/utils/colors/colors.dart';
+import 'package:carsaleauction/src/utils/images/images.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:stacked/stacked.dart';
 
 import 'otp_verification_viewmodel.dart';
@@ -13,9 +16,15 @@ class OtpVerificationView extends StackedView<OtpVerificationViewModel> {
     Widget? child,
   ) {
     return Scaffold(
-      backgroundColor: Theme.of(context).colorScheme.background,
-      body: Container(
-        padding: const EdgeInsets.only(left: 25.0, right: 25.0),
+      backgroundColor: AppColors.white,
+      body: Column(
+        children: [
+          SizedBox(
+            height: 100,
+            width: 100,
+            child: SvgPicture.asset(AppImages.logo2),
+          ),
+        ],
       ),
     );
   }

@@ -8,7 +8,7 @@ import 'package:stacked_services/stacked_services.dart';
 class LoginViewModel extends BaseViewModel {
   final TextEditingController controller = TextEditingController();
   PhoneNumber number = PhoneNumber(isoCode: 'Pk');
-  navigateToLogInView() {
+  navigateToOtpView() {
     locator<NavigationService>().navigateWithTransition(
       const OtpVerificationView(),
     );

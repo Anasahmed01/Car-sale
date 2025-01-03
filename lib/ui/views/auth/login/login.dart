@@ -105,18 +105,24 @@ class LoginView extends StackedView<LoginViewModel> {
               const SizedBox(
                 height: 30,
               ),
-              Container(
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(15),
-                  color: AppColors.greenColor,
+              GestureDetector(
+                onTap: () {
+                  viewModel.navigateToOtpView();
+                  viewModel.rebuildUi();
+                },
+                child: Container(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(15),
+                    color: AppColors.greenColor,
+                  ),
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 50, vertical: 15),
+                  alignment: Alignment.center,
+                  child: CustomText.customSizedText(
+                      size: 13,
+                      text: 'CREATE ACCOUNT',
+                      fontWeight: FontWeight.w600),
                 ),
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 50, vertical: 15),
-                alignment: Alignment.center,
-                child: CustomText.customSizedText(
-                    size: 13,
-                    text: 'CREATE ACCOUNT',
-                    fontWeight: FontWeight.w600),
               ),
               const SizedBox(
                 height: 50,

@@ -46,9 +46,11 @@ class WelcomeView extends StackedView<WelcomeViewModel> {
                 height: MediaQuery.sizeOf(context).height * 0.45,
                 width: double.infinity,
                 decoration: const BoxDecoration(
-                    image: DecorationImage(
-                        fit: BoxFit.cover,
-                        image: AssetImage('assets/images/welcome/logo.png'))),
+                  image: DecorationImage(
+                    fit: BoxFit.cover,
+                    image: AssetImage('assets/images/welcome/logo.png'),
+                  ),
+                ),
               ),
               Row(
                 children: [
